@@ -13,7 +13,7 @@ function decodeFileAsync(fileName) {
       console.log("Value : " + result['value']);
       console.log("##################");
     }
-  });
+  }, "");
 }
 
 function decodeFileStreamAsync(fileName) {
@@ -36,7 +36,7 @@ function decodeFileStreamAsync(fileName) {
           console.log("Value : " + result['value']);
         }
         console.log("Done............................................................\n");
-      });
+      }, "");
     });
   });
 }
@@ -60,7 +60,7 @@ function decodeYUYVAsync(fileName, width, height) {
           console.log("Value : " + result['value']);
           console.log("##################");
         }
-      });
+      }, "");
     });
   });
 }
@@ -68,7 +68,7 @@ function decodeYUYVAsync(fileName, width, height) {
 // Initialize DBR license.
 // Please contact support@dynamsoft.com to get a valid trial or full license.
 dbr.initLicense(
-    "t0068MgAAAGvV3VqfqOzkuVGi7x/PFfZUQoUyJOakuduaSEoI2Pc8+kMwjrojxQgE5aJphmhagRmq/S9lppTkM4w3qCQezxk=");
+    "t0068NQAAAKTSQDbEid8CTEeNluhTXi+h35G8R03xIHsyYNzZoa2GiU2a8y7s5Z1lfHsMW5dNyZmH6jQL51HUcoB5EhpDeDk=");
 
 // https://stackoverflow.com/questions/2727167/how-do-you-get-a-list-of-the-names-of-all-files-present-in-a-directory-in-node-j
 function getFiles(dir, files_) {
