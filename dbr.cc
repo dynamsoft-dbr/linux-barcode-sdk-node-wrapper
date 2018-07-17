@@ -74,6 +74,13 @@ static void DetectionWorking(uv_work_t *req)
 	// get the reference to BarcodeWorker
     BarcodeWorker *worker = static_cast<BarcodeWorker *>(req->data);
 
+	// Update DBR params
+	PublicParameterSettings pSettings = {0};
+	DBR_GetTemplateSettings(hBarcode, worker->templateName, &pSettings);
+	pSettings.mBarcodeFormatIds = worker->iFormat;
+	char szErrorMsgBuffer[256];
+	DBR_SetTemplateSettings(hBarcode, "", &pSettings, szErrorMsgBuffer, 256);
+
 	// initialize Dynamsoft Barcode Reader
 	STextResultArray *pResults = NULL;
 
