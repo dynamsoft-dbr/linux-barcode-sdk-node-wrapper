@@ -1,8 +1,7 @@
 var dbr = require('./build/Release/dbr');
 var readline = require('readline');
 var fs = require('fs');
-var barcodeTypes = 0x3FF | 0x2000000 | 0x8000000 |
-                   0x4000000;  // 1D, QRCODE, PDF417, DataMatrix
+var barcodeTypes = 0x3FF | 0x2000000 | 0x4000000 | 0x8000000;  // 1D, PDF417, QRCODE, DataMatrix
 
 function decodeFileAsync(fileName) {
   dbr.decodeFileAsync(fileName, barcodeTypes, function(err, msg) {
