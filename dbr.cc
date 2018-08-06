@@ -75,7 +75,7 @@ static void DetectionWorking(uv_work_t *req)
     BarcodeWorker *worker = static_cast<BarcodeWorker *>(req->data);
 
 	// Update DBR params
-	PublicParameterSettings pSettings = {0};
+	PublicParameterSettings pSettings = {};
 	DBR_GetTemplateSettings(hBarcode, worker->templateName, &pSettings);
 	pSettings.mBarcodeFormatIds = worker->iFormat;
 	char szErrorMsgBuffer[256];
@@ -98,7 +98,6 @@ static void DetectionWorking(uv_work_t *req)
 			{
 				if (worker->buffer)
 				{
-					int dibsize = 0;
 					int width = worker->width, height = worker->height;
 					int size = width * height;
 					int index = 0;
